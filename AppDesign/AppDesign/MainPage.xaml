@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDesign.MainPage">
+
+
+    <StackLayout HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="#0E2141"/>
+
+            <StackLayout x:Name="MainStack" Margin="20,2,20,20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1">
+
+                <Frame HasShadow="True"
+                           HeightRequest="25"
+                           IsClippedToBounds="True"
+                           BorderColor="#0E2141" 
+                           VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Margin="-19">
+                        <StackLayout Orientation="Horizontal" Padding="15" BackgroundColor="#0E2141" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Image Source="sync" HeightRequest="22" WidthRequest="22" VerticalOptions="Center"/>
+                            <Label Text="Sync Now" TextColor="White" VerticalTextAlignment="Center" />
+                            <Image Source="support" HeightRequest="22" WidthRequest="22" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="Technical Support" TextColor="White" VerticalTextAlignment="Center"/>
+                            <BoxView BackgroundColor="White" WidthRequest="1" HeightRequest="20"/>
+                            <Image Source="timecard" HeightRequest="22" WidthRequest="22" VerticalOptions="Center"/>
+                            <Label Text="Time Card" TextColor="White" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <StackLayout Spacing="15" Margin="5" 
+                                         HorizontalOptions="CenterAndExpand" 
+                                         VerticalOptions="CenterAndExpand">
+                            <Frame HasShadow="False"
+                                   CornerRadius="3"
+                                   BorderColor="#0E2141"
+                                   HorizontalOptions="Center"
+                                   HeightRequest="50"
+                                   Padding="0">
+                                <Entry Text="****" InputTransparent="True" WidthRequest="150" HeightRequest="40" HorizontalTextAlignment="Center" PlaceholderColor="Transparent" Margin="0" TranslationY="7" VerticalTextAlignment="Start" CharacterSpacing="5"/>
+                            </Frame>
+
+                            <Grid Style="{StaticResource GridLoginButtons}">
+
+
+                                <Button Grid.Row="0" Grid.Column="0" Text="1" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="0" Grid.Column="1" Text="2" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="0" Grid.Column="2" Text="3" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="1" Grid.Column="0" Text="4" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="1" Grid.Column="1" Text="5" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="1" Grid.Column="2" Text="6" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="2" Grid.Column="0" Text="7" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="2" Grid.Column="1" Text="8" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="2" Grid.Column="2" Text="9" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="3" Grid.Column="0" Text="Clear" BackgroundColor="Red" TextColor="White" FontSize="20" FontAttributes="Bold" CornerRadius="0" Padding="0"/>
+                                <Button Grid.Row="3" Grid.Column="1" Text="0" Style="{StaticResource GridButtonNumber}"/>
+                                <Button Grid.Row="3" Grid.Column="2" Text="Go" BackgroundColor="ForestGreen" TextColor="White" FontSize="28" FontAttributes="Bold" CornerRadius="0"/>
+                            </Grid>
+                            <Image x:Name="brandimg" Source="icon.png"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Orientation="Vertical">
+                    <StackLayout HorizontalOptions="End">
+                        <RelativeLayout>
+                            <Frame x:Name="circleFrame"
+                                       BorderColor="DarkBlue"
+                                       IsClippedToBounds="True"
+                                       HasShadow="False"
+                                       HeightRequest="75"
+                                       WidthRequest="75"
+                                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=X, Factor=.5, Constant = 100}" 
+                                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=0}"
+                                       Padding="0" 
+                                       Margin="0" 
+                                       VerticalOptions="Center" 
+                                       HorizontalOptions="Center"
+                                       BackgroundColor="DeepSkyBlue">
+
+                                <Image x:Name="circleImg" Source="logoabgo" Margin="5,5,5,5"/>
+                                <Frame.CornerRadius>
+                                    <OnPlatform x:TypeArguments="x:Single">
+                                        <On Platform="ios" Value="10"/>
+                                        <On Platform="Android" Value="50"/>
+                                    </OnPlatform>
+                                </Frame.CornerRadius>
+                            </Frame>
+                            <Frame
+                                        CornerRadius="15"
+                                        Padding="0"
+                                        IsEnabled="False"
+                                        IsVisible="True"
+                                        BackgroundColor="DarkRed"
+                                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=X, Factor=0, Constant=150}"
+                                        HeightRequest="35"
+                                        WidthRequest="35">
+                            </Frame>
+                            <Label Text="5" 
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=X, Constant=160}"
+                                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=5}"/>
+                        </RelativeLayout>
+                    </StackLayout>
+
+                   
+
+                    <Image x:Name="imag" Source="logo" />
+
+
+
+                    <Grid Style="{StaticResource GridLoginInfo}">
+
+                        <StackLayout Grid.Row="0" Grid.Column="0" Spacing="0" >
+                            <Label Text="Support:" Style="{StaticResource TextLoginInfoPrefix}"/>
+                            <Label Text="support@abposus.com" Style="{StaticResource TextLoginInfo}"/>
+                            <Label Text="888-330-3974" Style="{StaticResource TextLoginInfo}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="1" Spacing="0" >
+                            <Label Text="Station:" Style="{StaticResource TextLoginInfoPrefix}"/>
+                            <Label Text="1" Style="{StaticResource TextLoginInfo}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="2" Spacing="0" >
+                            <Label Text="Version:" Style="{StaticResource TextLoginInfoPrefix}"/>
+                            <Label Text="20.09.21 V3" Style="{StaticResource TextLoginInfo}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="3" Spacing="0">
+                            <Label Text="Register Key:" Style="{StaticResource TextLoginInfoPrefix}"/>
+                            <Label Text="8ec182adc172" Style="{StaticResource TextLoginInfo}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="4" Orientation="Horizontal" Spacing="3">
+                            <Label Text="12:22 PM" Style="{StaticResource TextLoginTime}"/>
+                            <StackLayout Spacing="-5">
+                                <Label Text="Monday" Style="{StaticResource TextLoginDate}"/>
+                                <Label Text="06 Oct" Style="{StaticResource TextLoginDate}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+
+
+            </StackLayout>
+
+
+            <BoxView Grid.Row="2" BackgroundColor="#0E2141"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

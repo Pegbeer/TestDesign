@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDesign.ResourceDictionaries.SmallTablet">
+
+    <!--#region LOGINVIEW-->
+    <Style x:Key="MainLogoHorizontal" TargetType="Image">
+        <Setter Property="HeightRequest" Value="{OnIdiom Default='100',Phone='100',Tablet='300'}"/>
+        <Setter Property="WidthRequest" Value="{OnIdiom Default='100',Phone='100', Tablet='300'}"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+    </Style>
+
+    <Style x:Key="MainLogoVertical" TargetType="Image">
+        <Setter Property="HeightRequest" Value="{OnIdiom Default='40',Phone='100',Tablet='200'}"/>
+        <Setter Property="WidthRequest" Value="{OnIdiom Default='40',Phone='100', Tablet='200'}"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+    </Style>
+
+    <Style x:Key="BrandLogoHorizontal" TargetType="Image">
+        <Setter Property="HeightRequest" Value="{OnIdiom Default='100',Phone='100',Tablet='80'}"/>
+        <Setter Property="WidthRequest" Value="{OnIdiom Default='100',Phone='100', Tablet='80'}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="Margin" Value="0,-25,0,0"/>
+    </Style>
+
+    <Style x:Key="BrandLogoVertical" TargetType="Image">
+        <Setter Property="HeightRequest" Value="{OnIdiom Default='40',Phone='100',Tablet='80'}"/>
+        <Setter Property="WidthRequest" Value="{OnIdiom Default='40',Phone='100', Tablet='80'}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="Margin" Value="0,-25,0,0"/>
+    </Style>
+
+    <RowDefinitionCollection x:Key="RowLoginButtons">
+        <RowDefinition Height="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+        <RowDefinition Height="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+        <RowDefinition Height="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+        <RowDefinition Height="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+    </RowDefinitionCollection>
+
+    <ColumnDefinitionCollection x:Key="ColumnLoginButton">
+        <ColumnDefinition Width="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+        <ColumnDefinition Width="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+        <ColumnDefinition Width="{OnIdiom Default='40',Phone='60', Tablet='70'}"/>
+    </ColumnDefinitionCollection>
+
+
+    <RowDefinitionCollection x:Key="RowLoginInfo">
+        <RowDefinition Height="{OnIdiom Phone='55',Tablet='55'}"/>
+    </RowDefinitionCollection>
+
+    <ColumnDefinitionCollection x:Key="ColumnLoginInfo">
+        <ColumnDefinition Width="135"/>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="73"/>
+        <ColumnDefinition Width="90"/>
+        <ColumnDefinition Width="135"/>
+    </ColumnDefinitionCollection>
+
+
+    <Style x:Key="GridButtonNumber" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="FontSize" Value="{OnIdiom Phone='14',Tablet='20'}"/>
+        <Setter Property="TextColor" Value="{StaticResource TextIconsColor}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="CornerRadius" Value="0"/>
+    </Style>
+
+
+    <Style x:Key="GridLoginButtons" TargetType="Grid">
+        <Setter Property="RowDefinitions" Value="{StaticResource RowLoginButtons}"/>
+        <Setter Property="ColumnDefinitions" Value="{StaticResource ColumnLoginButton}"/>
+        <Setter Property="RowSpacing" Value="{OnIdiom Phone='1',Tablet='2'}"/>
+        <Setter Property="ColumnSpacing" Value="{OnIdiom Phone='1', Tablet='2'}"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style x:Key="GridLoginInfo" TargetType="Grid">
+        <Setter Property="RowDefinitions" Value="{StaticResource RowLoginInfo}"/>
+        <Setter Property="ColumnDefinitions" Value="{StaticResource ColumnLoginInfo}"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="VerticalOptions" Value="End"/>
+        <Setter Property="ColumnSpacing" Value="1"/>
+    </Style>
+
+    <Style x:Key="TextLoginInfo" TargetType="Label">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+
+    <Style x:Key="TextLoginInfoPrefix" TargetType="Label">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="TextLoginTime" TargetType="Label">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="TextLoginDate" TargetType="Label">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region PRINCIPALVIEW-->
+    <RowDefinitionCollection x:Key="RowHorizontalMenuGrid">
+        <RowDefinition Height="130"/>
+        <RowDefinition Height="130"/>
+        <RowDefinition Height="40"/>
+        <RowDefinition Height="70"/>
+    </RowDefinitionCollection>
+
+    <ColumnDefinitionCollection x:Key="ColumnHorizontalMenuGrid">
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+    </ColumnDefinitionCollection>
+
+    <Style x:Key="HorizontalMenuGrid" TargetType="Grid">
+        <Setter Property="RowDefinitions" Value="{StaticResource RowHorizontalMenuGrid}"/>
+        <Setter Property="ColumnDefinitions" Value="{StaticResource ColumnHorizontalMenuGrid}"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="RowSpacing" Value="1"/>
+        <Setter Property="ColumnSpacing" Value="2"/>
+    </Style>
+
+    <RowDefinitionCollection x:Key="RowVerticalMenuGrid">
+        <RowDefinition Height="150"/>
+        <RowDefinition Height="150"/>
+        <RowDefinition Height="50"/>
+        <RowDefinition Height="80"/>
+    </RowDefinitionCollection>
+
+    <ColumnDefinitionCollection x:Key="ColumnVerticalMenuGrid">
+        <ColumnDefinition Width="125"/>
+        <ColumnDefinition Width="125"/>
+        <ColumnDefinition Width="125"/>
+        <ColumnDefinition Width="125"/>
+    </ColumnDefinitionCollection>
+
+    <Style x:Key="VerticalMenuGrid" TargetType="Grid">
+        <Setter Property="RowDefinitions" Value="{StaticResource RowVerticalMenuGrid}"/>
+        <Setter Property="ColumnDefinitions" Value="{StaticResource ColumnVerticalMenuGrid}"/>
+        <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="RowSpacing" Value="1"/>
+        <Setter Property="ColumnSpacing" Value="2"/>
+    </Style>
+
+    <RowDefinitionCollection x:Key="RowSubMenuHorizontal">
+        <RowDefinition Height="70"/>
+    </RowDefinitionCollection>
+
+    <ColumnDefinitionCollection x:Key="ColumnSubMenuHorizontal">
+        <ColumnDefinition Width="80"/>
+        <ColumnDefinition Width="80"/>
+        <ColumnDefinition Width="80"/>
+        <ColumnDefinition Width="80"/>
+        <ColumnDefinition Width="80"/>
+    </ColumnDefinitionCollection>
+
+    <Style x:Key="SubMenuHorizontalGrid" TargetType="Grid">
+        <Setter Property="RowDefinitions" Value="{StaticResource RowSubMenuHorizontal}"/>
+        <Setter Property="ColumnDefinitions" Value="{StaticResource ColumnSubMenuHorizontal}"/>
+        <Setter Property="ColumnSpacing" Value="1"/>
+    </Style>
+
+    <RowDefinitionCollection x:Key="RowSubMenuVertical">
+        <RowDefinition Height="80"/>
+    </RowDefinitionCollection>
+
+    <ColumnDefinitionCollection x:Key="ColumnSubMenuVertical">
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+        <ColumnDefinition Width="100"/>
+    </ColumnDefinitionCollection>
+
+    <Style x:Key="SubMenuVerticalGrid" TargetType="Grid">
+        <Setter Property="RowDefinitions" Value="{StaticResource RowSubMenuVertical}"/>
+        <Setter Property="ColumnDefinitions" Value="{StaticResource ColumnSubMenuVertical}"/>
+        <Setter Property="ColumnSpacing" Value="2"/>
+    </Style>
+
+    <Style x:Key="MainStatusStack" TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HeightRequest" Value="{OnIdiom Phone='30', Tablet='40'}"/>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

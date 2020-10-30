@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDesign.MenuPage"
+             Visual="Material">
+
+    <StackLayout HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="#0E2141"/>
+
+            <StackLayout x:Name="MainStack" Grid.Row="1" Margin="10,2,10,10" Spacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                    <StackLayout x:Name="mainStatusStack">
+                        <Frame x:Name="hideFrame" CornerRadius="0" BackgroundColor="Transparent" Padding="1">
+                            <StackLayout Orientation="Horizontal">
+                                <Image x:Name="imgFrame" Source="arrowright" VerticalOptions="Center"/>
+                                <Label Text="Status" VerticalOptions="Center" />
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="displayFrame" Tapped="displayFrame_Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <BoxView BackgroundColor="{StaticResource TextIconsColor}" WidthRequest="1" Opacity="0.3" Margin="0"/>
+                        <Frame CornerRadius="0" BackgroundColor="Transparent" Padding="1">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="sync" VerticalOptions="Center" />
+                                <Label Text="Sync Now" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Frame>
+                        <BoxView BackgroundColor="{StaticResource TextIconsColor}" WidthRequest="1" Opacity="0.3" Margin="0"/>
+                        <BoxView BackgroundColor="{StaticResource TextIconsColor}" WidthRequest="1" Opacity="0.3" Margin="0" HorizontalOptions="EndAndExpand"/>
+                        <Frame CornerRadius="0" BackgroundColor="Transparent" Padding="1" Margin="0,0,3,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="switchuser" VerticalOptions="Center"/>
+                                <Label Text="Switch User" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    <Frame x:Name="MainFrame" 
+                           Padding="0" 
+                           CornerRadius="0"
+                           BorderColor="{StaticResource PrimaryColor}" 
+                           HorizontalOptions="FillAndExpand">
+                        <StackLayout VerticalOptions="FillAndExpand" >
+                            <Image Source="logo" HorizontalOptions="Center" HeightRequest="175" WidthRequest="175" Margin="0,2,0,0"/>
+                            <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource PrimaryColor}" HeightRequest="1"/>
+                            <StackLayout Orientation="Horizontal" Margin="4,1,4,1" Spacing="0" VerticalOptions="FillAndExpand">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <Label Text="Logged In:" FontAttributes="Bold"/>
+                                    <Label Text="Carlos Ramos" Margin="0,-10,0,0"/>
+                                    <Label Text="Last Order:" FontAttributes="Bold"/>
+                                    <Label Text="$75.99" Margin="0,-10,0,0"/>
+                                    <Label Text="Station:" FontAttributes="Bold"/>
+                                    <Label Text="1" Margin="0,-10,0,0"/>
+                                    <Label Text="Cashier Active:" FontAttributes="Bold"/>
+                                    <Label Text="OK" Margin="0,-10,0,0"/>
+                                    <Label Text="Staff Bank Active:" FontAttributes="Bold"/>
+                                    <Label Text="OK" Margin="0,-10,0,0"/>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <Label Text="Last Bach:" FontAttributes="Bold"/>
+                                    <Label Text="$1000.00" Margin="0,-10,0,0"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource PrimaryColor}" HeightRequest="1"/>
+                            <StackLayout Orientation="Horizontal" Margin="4,-4,4,0" Spacing="0" VerticalOptions="FillAndExpand">
+                                <StackLayout HorizontalOptions="FillAndExpand">
+                                    <Label Text="Support" FontAttributes="Bold" FontSize="Micro"/>
+                                    <Label Text="support@abposus.com" FontSize="Micro" Margin="0,-8,0,0"/>
+                                    <Label Text="888-330-3974" FontSize="Micro" Margin="0,-8,0,0"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,0,3,0">
+                                    <Label Text="12:22 PM" FontAttributes="Bold" FontSize="22" VerticalOptions="Center"/>
+                                    <StackLayout Spacing="-5" VerticalOptions="Center">
+                                        <Label Text="Monday" FontAttributes="Bold" FontSize="Micro"/>
+                                        <Label Text="06 Oct" FontAttributes="Bold" FontSize="Micro"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+                <StackLayout x:Name="gridButtons" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+                    <Image HorizontalOptions="End" Source="icon" WidthRequest="60" HeightRequest="60"/>
+                    <Grid x:Name="actionsGrid">
+
+                        <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="tables"/>
+                                <Label Text="Tables" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="register" />
+                                <Label Text="Register" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="recall" />
+                                <Label Text="Recall"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="3" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="staffbank" />
+                                <Label Text="Staff Bank" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="cashier" />
+                                <Label Text="Cashier" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="station" />
+                                <Label Text="Station Setting" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="backoffice" />
+                                <Label Text="Back Office" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="3" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="0" Padding="0" HasShadow="False">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <Image Source="dailyclose" />
+                                <Label Text="Daily Close" />
+                            </StackLayout>
+                        </Frame>
+
+                        <Grid x:Name="subActionsGrid" Grid.Row="3" Grid.ColumnSpan="3">
+
+                            <Frame Padding="0"
+                                   Grid.Column="0"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource PrimaryColor}">
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Source="logoabgo" />
+                                    <Label Text="AB GO" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="0"
+                                   Grid.Column="1"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource PrimaryColor}">
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Source="loyalty" />
+                                    <Label Text="Loyalty" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="0"
+                                   Grid.Column="2"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource PrimaryColor}">
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Source="giftcard" />
+                                    <Label Text="Giftcard" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="0"
+                                   Grid.Column="3"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource PrimaryColor}">
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Source="customerdisplay" />
+                                    <Label Text="Customer Display" />
+                                </StackLayout>
+                            </Frame>
+                            <Frame Padding="0"
+                                   Grid.Column="4"
+                                   HasShadow="False"
+                                   CornerRadius="0"
+                                   BackgroundColor="{StaticResource PrimaryColor}">
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Image Source="kitchen" />
+                                    <Label Text="Kitchen Display" />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+
+            <BoxView Grid.Row="2" BackgroundColor="#0E2141"/>
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>
